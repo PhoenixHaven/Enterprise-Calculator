@@ -48,7 +48,7 @@ public class Main {
                 ScriptEngine engine = mgr.getEngineByName("js");
                 String calc = first + " " + something + " " + second;
                 try {
-                    textArea.setText("The answer is " +  engine.eval(calc).toString());
+                    textArea.setText("The answer is " +  engine.eval(calc).toString().replaceAll("[a-zA-Z]", ""));
                 } catch (ScriptException e2) {
                     e2.printStackTrace();
                     textArea.setText("The answer is java.lang.ArithmeticException"); // if shit went wrong here then cope I dont get paid enough
